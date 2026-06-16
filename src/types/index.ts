@@ -43,7 +43,7 @@ export interface TrainingPlan {
   id: string;
   userId: string;
   overview: PlanOverview;
-  weeklySchedule: DaySchedule;
+  weeklySchedule: DaySchedule[];
   progression: string;
   version: number;
   createdAt: string;
