@@ -64,15 +64,17 @@ export default function Profile() {
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
           <div>
-            <h1 className="text-3xl font-bold mb-1">Your Training Plan</h1>
-            <p className="text-[var(--color-muted)]">
+            <h1 className="text-3xl max-[360px]:text-2xl font-bold mb-1">
+              Your Training Plan
+            </h1>
+            <p className="text-[var(--color-muted)] max-[360px]:text-sm">
               Version {plan.version} • Created {formatDate(plan.createdAt)}
             </p>
           </div>
 
           <Button
             variant="secondary"
-            className="gap-2 min-w-[170px] justify-center"
+            className="gap-2 min-w-[170px] justify-center max-[360px]:text-sm"
             onClick={handleRegenerate}
             disabled={isRegenerating}
           >

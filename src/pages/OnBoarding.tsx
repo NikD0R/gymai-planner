@@ -18,7 +18,7 @@ import type { UserProfile } from "../types";
 import { useNavigate } from "react-router-dom";
 
 export default function OnBoarding() {
-  const { user, saveProfile, generatePlan } = useAuth();
+  const { user, saveProfile, generatePlan, isLoading } = useAuth();
   const [formData, setFormData] = useState({
     goal: "bulk",
     experience: "intermediate",
@@ -31,6 +31,14 @@ export default function OnBoarding() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="w-12 h-12 text-[var(--color-accent)] mx-auto mb-6 animate-spin" />
+      </div>
+    );
+  }
 
   if (!user) {
     return <RedirectToSignIn />;
@@ -104,7 +112,7 @@ export default function OnBoarding() {
                   value={formData.experience}
                   onChange={(e) => updateForm("experience", e.target.value)}
                 />
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4 max-[500px]:grid-cols-1">
                   <Select
                     id="daysPerWeek"
                     label="Days per week"
@@ -149,7 +157,7 @@ export default function OnBoarding() {
                 <div className="flx gap-3 pt-2">
                   <Button
                     type="submit"
-                    className="flex-1 gap-2"
+                    className="flex-1 gap-2 max-[360px]:text-sm"
                   >
                     Generate My Plan <ArrowRight className="w-4 h-4" />
                   </Button>

@@ -8,7 +8,17 @@ export default function Auth() {
       <div className="max-w-md w-full">
         <AuthView
           pathname={pathname}
-          className="text-foreground neon-custom-form [&_button:not([type='submit'])]:cursor-pointer [&_button:not([type='submit'])]:hover:text-foreground/80!"
+          className={`
+            text-foreground neon-custom-form 
+            [&_button:not([type='submit'])]:cursor-pointer 
+            [&_button:not([type='submit'])]:hover:text-foreground/80!
+
+            max-[360px]:[&_div:has(label)]:flex-col
+            max-[360px]:[&_div:has(label)]:items-start
+
+            max-[360px]:[&_div:has(label)>a]:mt-1.5
+            max-[360px]:[&_div:has(label)>button]:mt-1.5
+          `}
         />
       </div>
     </div>

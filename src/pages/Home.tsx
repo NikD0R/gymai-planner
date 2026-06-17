@@ -75,14 +75,14 @@ export default function Home() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+          <h1 className="text-5xl md:text-7xl max-[500px]:text-3xl font-bold tracking-tight mb-6">
             Your Perfect
             <br />
             <span className="text-[var(--color-accent)]">Gym Plan</span> in
             Seconds
           </h1>
 
-          <p className="text-xl text-[var(--color-muted)] max-w-2xl mx-auto mb-10">
+          <p className="text-xl max-[500px]:text-base text-[var(--color-muted)] max-w-2xl mx-auto mb-10">
             Stop guessing. Get a personalized training program built by AI,
             tailored to your goals, experience, and schedule.
           </p>
@@ -91,7 +91,7 @@ export default function Home() {
             <Link to="/onboarding">
               <Button
                 size="lg"
-                className="gap-2"
+                className="gap-2 max-[500px]:text-base"
               >
                 Get Started Free
                 <ArrowRight className="w-5 h-5" />
@@ -101,6 +101,7 @@ export default function Home() {
               <Button
                 variant="secondary"
                 size="lg"
+                className="max-[500px]:text-base"
               >
                 Sign In
               </Button>
@@ -113,8 +114,10 @@ export default function Home() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why GymAI?</h2>
-            <p className="text-[var(--color-muted)] text-lg max-w-2xl mx-auto">
+            <h2 className="text-3xl max-[500px]:text-2xl md:text-4xl font-bold mb-4">
+              Why GymAI?
+            </h2>
+            <p className="text-[var(--color-muted)] text-lg max-[500px]:text-base max-w-2xl mx-auto">
               We combine fitness expertise with AI to create programs that
               actually work for you.
             </p>

@@ -8,7 +8,22 @@ export default function Account() {
       <div className="max-w-4xl mx-auto">
         <AccountView
           pathname={pathname}
-          className="text-foreground neon-custom-form [&_button]:cursor-pointer [&_button]:hover:text-foreground/90"
+          className={`
+            text-foreground neon-custom-form 
+            [&_button]:cursor-pointer 
+            [&_button]:transition-colors
+            [&_button]:hover:text-foreground/90
+
+            [&_div[data-slot='card-content']]:!min-w-0
+            [&_div[data-slot='card']]:!flex-wrap
+            [&_div[data-slot='card']]:!w-full
+            
+            [&_div[data-slot='card']>div]:!min-w-0
+            
+            [&_button:hover_svg]:!text-black
+            [&_button:hover_svg_*]:!stroke-black
+            [&_button:hover_svg_*]:!fill-black
+          `}
         />
       </div>
     </div>
